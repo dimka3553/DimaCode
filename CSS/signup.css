@@ -1,0 +1,140 @@
+html,body{
+	height: 100%;
+	width: 100%;
+}
+a{
+	color: #188EDD;
+}
+.signup-left{
+	height: 100%;
+	position: absolute;
+	background: linear-gradient(51.49deg, #00B4CC -3.45%, #3166EF 81.39%);
+	width: 580px;
+	left: 0;
+	min-height: 576px;
+}
+.signup-right{
+	position: absolute;
+	height: 100%;
+	right: 0;
+	width: calc(100% - 580px);
+	min-height: 576px;
+}
+.signup-logo{
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 100px;
+}
+.signup-text{
+	font-size: 50px;
+	font-weight: 300;
+}
+.text-cont-su{
+	width: 450px;
+	margin-left: 5%;
+}
+.signup-cont{
+	width: 100%;
+	max-width: 380px;
+	padding: 20px;
+	transition: 0.2s;
+}
+.login-inp.su{
+	border-radius: 5px;
+	margin-bottom: 18px;
+}
+.su-name{
+	width: 47.5%;
+}
+.su-name.s{
+	margin-left: calc(5% - 4px);
+}
+.su-agreement{
+	color: #CCCCCC;
+}
+.su-agreement a{
+	color: #93AAE5;
+}
+.su-btn{
+	height: 48px;
+	width: 100%;
+	max-width: 200px;
+	border:0;
+	outline: 0!important;
+	border-radius: 5px;
+	background: linear-gradient(51.49deg, #00B4CC -3.45%, #3166EF 81.39%);
+	box-shadow: 0px 2px 8px #BED0FF;
+	color: white;
+	transition: 0.2s;
+	overflow: hidden;
+}
+.su-btn:hover{
+	box-shadow: 0px 0px 10px #1F48AF;
+}
+.login-instead{
+	margin-bottom: 10px;
+	width: fit-content;
+	color: #BBBBBB;
+	max-width: 320px;
+	text-align: center;
+}
+
+.round-box{
+	background: #EFEFEF;
+	border-radius: 10px;
+	padding: 20px;
+}
+@media(max-width: 1200px){
+	.signup-left{
+		width: 350px;
+	}
+	.signup-logo{
+		font-size: 60px;
+	}
+	.signup-text{
+		font-size: 30px;
+	}
+	.text-cont-su{
+		width: 280px;
+		margin-left: 5%;
+	}
+	.signup-right{
+		width: calc(100% - 350px);
+	}
+}
+@media(max-width: 768px){
+	.signup-left{
+		width: 50px;
+		left:-350px;
+	}
+	.signup-right{
+		width: 100%;
+	}
+}
+@media(max-width: 576px) {
+	.signup-cont{
+		position: absolute;
+		top: 0px;
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+	  	-moz-transform: translateX(-50%);
+	  	-ms-transform: translateX(-50%);
+	  	-o-transform: translateX(-50%);
+		transform: translateX(-50%);
+		max-width: 380px;
+		padding: 20px;
+	}
+}
+@media(max-height: 576px){
+	.signup-cont{
+		position: absolute;
+		top: 0px;
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+	  	-moz-transform: translateX(-50%);
+	  	-ms-transform: translateX(-50%);
+	  	-o-transform: translateX(-50%);
+		transform: translateX(-50%);
+		max-width: 380px;
+		padding: 20px;
+	}
+}

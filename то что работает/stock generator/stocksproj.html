@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="data.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+<body>
+	<canvas id="myChart"></canvas>
+	<button onclick="addPrice()">add</button>
+<script type="text/javascript">
+	var DJ = [];
+	setData();
+	var days = DJ.length;
+	var price = 30;
+	var rprice = 30;
+
+	var ran = 0;
+	var change = 0;
+	var prices = [];
+	var rprices = [];
+	var dayCount = [];
+
+	
+	var ctx = document.getElementById('myChart').getContext('2d');
+	var chart = new Chart(ctx, {
+	    // The type of chart we want to create
+	    type: 'line',
+
+	    // The data for our dataset
+	    data: {
+	        labels: dayCount,
+	        datasets: [{
+	            label: 'Price',
+	            backgroundColor: 'rgb(0, 0, 255)',
+	            borderColor: 'rgb(0, 0, 255)',
+	            data: prices,
+	            fill:false,
+	            lineTension: 0,
+	            pointRadius: 0
+	        },
+	        {
+	            label: 'real Price',
+	            backgroundColor: 'rgb(255, 0, 0)',
+	            borderColor: 'rgb(255, 0, 0)',
+	            data: rprices,
+	            fill:false,
+	            lineTension: 0,
+	            pointRadius: 0
+	        }
+	      ]
+	    },
+
+	    // Configuration options go here
+	    options: {
+	    	animation: {
+				duration: 0
+			}
+	    }
+	});
+
+	var counter = 0;
+	var counter2 = 0;
+
+	(function () {
+	    function addPrice() {
+	    ran = Math.floor(Math.random() * days);
+		change = 1 + DJ[ran];
+		price = price * change;
+		prices.push(price);
+		dayCount.push(dayCount.length);
+		change = 1 + DJ[counter2];
+		rprice = rprice * change;
+		rprices.push(rprice);
+		counter = counter +1;
+		counter2 = counter2 + 1;
+		if(counter == 100){
+			chart.update();
+			counter = 0;
+		} 
+	        t = setTimeout(function () {
+	            addPrice();
+	        }, 0);
+	    }
+	    addPrice();
+	})();
+	
+</script>
+</body>
+</html>
